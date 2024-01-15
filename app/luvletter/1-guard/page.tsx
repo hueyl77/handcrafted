@@ -1,12 +1,11 @@
 "use client";
-import 'react-dropzone-uploader/dist/styles.css'
-import Dropzone from 'react-dropzone-uploader'
 
 import { useState } from "react";
 import { ArrowRightCircleIcon, UserCircleIcon } from "@heroicons/react/24/outline"
 import { Button, Card, Icon, Title, Text, Grid } from "@tremor/react";
 
 import Image from 'next/image';
+import Dropzone from '../../components/dropzone'
 
 export default function Page() {
 	const [princessFaceImg, setPrincessFaceImg] = useState<File>();
@@ -48,13 +47,13 @@ export default function Page() {
 		}
 	};
 
-	const handleChangeStatus = (fileWithMeta: any, status: any) => {
-		console.log("fileWithMeta: ", fileWithMeta)
-		if (!fileWithMeta) {
+	const handleOnDrop = (acceptedFiles: File[]) => {
+		if (acceptedFiles.length == 0) {
+			alert("no files detected")
 			return
 		}
-		setPrincessFaceImg(fileWithMeta?.file)
-		setUserPrincessImgUrl(fileWithMeta?.meta.previewUrl)
+		setPrincessFaceImg(acceptedFiles[0])
+		setUserPrincessImgUrl(URL.createObjectURL(acceptedFiles[0]))
   }
 
 	return (
@@ -64,19 +63,12 @@ export default function Page() {
 			
       <Grid numItems={1} numItemsSm={2} numItemsLg={3} className="gap-4 mt-4">
         <Card className="flex flex-col items-center justify-center">
-          {!userPrincessImgUrl && (<Dropzone
-            onChangeStatus={handleChangeStatus}
-            multiple={false}
-            accept="image/*"
+          {!userPrincessImgUrl && (<Dropzone 
+						accept={{'image/*': []}}
 						maxFiles={1}
-						maxSizeBytes={(1024 * 1024 * 20)}
-            styles={{ dropzone: { height: 300, border: '1px solid blue' } }}
-            inputContent={<div className="flex flex-col items-center">
-								<Icon icon={UserCircleIcon} size='xl' />
-								<Text>Click or Drop File</Text>
-								<Text>Images only.  Max 20MB</Text>
-							</div>}
-          />)}
+						maxSize={(1024 * 1024 * 25)}
+						onDrop={handleOnDrop}
+					/>)}
 
 					{userPrincessImgUrl && (<div>
 						<Image
@@ -85,7 +77,7 @@ export default function Page() {
 							height={200}
 							alt="User Princess Image"
 						/>
-						<Icon icon={ArrowRightCircleIcon} className="absolute top-1/3 right-0" size='xl' />
+						<Icon icon={ArrowRightCircleIcon} className="absolute right-0" size='xl' />
 					</div>)}	
         </Card>
       
@@ -98,7 +90,7 @@ export default function Page() {
           />
 
 					{userPrincessImgUrl && (<div>
-						<Icon icon={ArrowRightCircleIcon} className="absolute top-1/3 right-0" size='xl' />
+						<Icon icon={ArrowRightCircleIcon} className="absolute right-0" size='xl' />
 					</div>)}	
         </Card>
         

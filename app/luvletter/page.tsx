@@ -15,9 +15,9 @@ export default function Page() {
 				
 				<Card className="flex flex-col items-center justify-center">
 					<Text className="mb-2">8. Princess (x1)</Text>
-					<Link href="/luvletter/princess">
+					<Link href="/luvletter/8-princess">
 						<Image
-							src="https://cdn.handcraftedgames.co/cards/princess-scan1.jpg"
+							src="https://cdn.handcraftedgames.co/cards/8-princess.jpg"
 							width={120}
 							height={120}
 							alt="Princess Image"
@@ -27,72 +27,98 @@ export default function Page() {
 
 				<Card className="flex flex-col items-center justify-center">
 					<Text className="mb-2">7. Countess (x1)</Text>
-					<Image
-						src="https://cdn.handcraftedgames.co/cards/princess-scan1.jpg"
-						width={120}
-						height={120}
-						alt="Princess Image"
-					/>
+					<Link href="/luvletter/7-countess">
+						<Image
+							src="https://cdn.handcraftedgames.co/cards/7-countess.jpg"
+							width={120}
+							height={120}
+							alt="Countess Image"
+						/>
+					</Link>
 				</Card>
 			
 				<Card className="flex flex-col items-center justify-center">
 					<Text className="mb-2">6. King (x1)</Text>
-					<Image
-						src="https://cdn.handcraftedgames.co/cards/guard-scan1.jpg"
-						width={120}
-						height={120}
-						alt="King Image"
-					/>
+					<Link href="/luvletter/6-king">
+						<Image
+							src="https://cdn.handcraftedgames.co/cards/6-king.jpg"
+							width={120}
+							height={120}
+							alt="King Image"
+						/>
+					</Link>
 				</Card>
 
 				<Card className="flex flex-col items-center justify-center">
 					<Text className="mb-2">5. Prince (x2)</Text>
-					<Image
-						src="https://cdn.handcraftedgames.co/cards/princess-scan1.jpg"
-						width={120}
-						height={120}
-						alt="Princess Image"
-					/>
+					<Link href="/luvletter/5-prince">
+						<Image
+							src="https://cdn.handcraftedgames.co/cards/5-prince.jpg"
+							width={120}
+							height={120}
+							alt="Prince Image"
+						/>
+					</Link>
 				</Card>
 
 				<Card className="flex flex-col items-center justify-center">
-					<Text className="mb-2">4. Maid (x2)</Text>
-					<Image
-						src="https://cdn.handcraftedgames.co/cards/princess-scan1.jpg"
-						width={120}
-						height={120}
-						alt="Princess Image"
-					/>
+					<Text className="mb-2">4. Handmaid (x2)</Text>
+					<Link href="/luvletter/4-handmaid">
+						<Image
+							src="https://cdn.handcraftedgames.co/cards/4-handmaid.jpg"
+							width={120}
+							height={120}
+							alt="Handmaid Image"
+						/>
+					</Link>
 				</Card>
 
 				<Card className="flex flex-col items-center justify-center">
 					<Text className="mb-2">3. Baron (x2)</Text>
-					<Image
-						src="https://cdn.handcraftedgames.co/cards/princess-scan1.jpg"
-						width={120}
-						height={120}
-						alt="Princess Image"
-					/>
+					<Link href="/luvletter/3-baron">
+						<Image
+							src="https://cdn.handcraftedgames.co/cards/3-baron.jpg"
+							width={120}
+							height={120}
+							alt="Baron Image"
+						/>
+					</Link>
 				</Card>
 
 				<Card className="flex flex-col items-center justify-center">
 					<Text className="mb-2">2. Priest (x2)</Text>
-					<Image
-						src="https://cdn.handcraftedgames.co/cards/princess-scan1.jpg"
-						width={120}
-						height={120}
-						alt="Princess Image"
-					/>
+					<Link href="/luvletter/2-priest">
+						<Image
+							src="https://cdn.handcraftedgames.co/cards/2-priest.jpg"
+							width={120}
+							height={120}
+							alt="Priest Image"
+						/>
+					</Link>
 				</Card>
 
 				<Card className="flex flex-col items-center justify-center">
 					<Text className="mb-2">1. Guard (x5)</Text>
-					<Image
-						src="https://cdn.handcraftedgames.co/cards/guard-scan1.jpg"
-						width={120}
-						height={120}
-						alt="Princess Image"
-					/>
+					<Link href="/luvletter/1-guard">
+						<Image
+							src="https://cdn.handcraftedgames.co/cards/1-guard.jpg"
+							width={120}
+							height={120}
+							alt="Guard Image"
+						/>
+					</Link>
+				</Card>
+
+				<Card className="flex flex-col items-center justify-center">
+					<Text className="mb-2">Back of Card</Text>
+					<Link href="/luvletter/back">
+						<Image
+							src="https://cdn.handcraftedgames.co/cards/back-1.jpg"
+							width={120}
+							height={120}
+							alt="Back of Card Image"
+						/>
+					</Link>
 				</Card>
 				
 			</Grid>
