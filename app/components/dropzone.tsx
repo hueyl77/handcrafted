@@ -54,7 +54,7 @@ export default function Dropzone(props: any) {
 
   return (
     <div className="container">
-      <div {...getRootProps({style})}>
+      <div {...getRootProps({style})} className='flex-col cursor-pointer'>
         <input {...getInputProps()} />
         <Icon icon={UserCircleIcon} size='xl' />
         <Text>Click or Drop File</Text>

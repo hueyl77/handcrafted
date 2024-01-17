@@ -1,15 +1,17 @@
-"use client";
+"use client"
 
-import { useState } from "react";
+import { useState } from "react"
 import { ArrowRightCircleIcon, UserCircleIcon } from "@heroicons/react/24/outline"
-import { Button, Card, Icon, Title, Text, Grid } from "@tremor/react";
+import { Button, Card, Icon, Title, Text, Grid } from "@tremor/react"
 
-import Image from 'next/image';
+import Image from 'next/image'
 import Dropzone from '../../components/dropzone'
 
 export default function Page() {
-	const [princessFaceImg, setPrincessFaceImg] = useState<File>();
-	const [userPrincessImgUrl, setUserPrincessImgUrl] = useState<string | null>(null);
+	const [princessFaceImg, setPrincessFaceImg] = useState<File>()
+	const [userPrincessImgUrl, setUserPrincessImgUrl] = useState<string | null>(null)
+	const [generatedImgUrl, setGeneratedImgUrl] = useState<string | null>(null)
+	const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
 
 	const handleOnchangePrincess = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const userImgFile = e.target.files?.[0]
@@ -22,11 +24,13 @@ export default function Page() {
 
 	const onPrincessSubmit = async () => {
 		if (!princessFaceImg) {
-			return;
+			return
 		}
 
 		try {
 			console.log("submitting...")
+			setIsSubmitting(true)
+
 			const data = new FormData()
 			data.set('princessFaceImg', princessFaceImg)
 
@@ -36,20 +40,23 @@ export default function Page() {
 			})
 
 			if (!res.ok) {
+				setIsSubmitting(false)
 				throw new Error(await res.text())
 			}
 
 			const resJson = await res.json()
-			console.log("resJson: ", resJson)
+			
+			setGeneratedImgUrl(resJson.imgUrl)
+			setIsSubmitting(false)
 
 		} catch (e) {
 			console.log(e)
 		}
-	};
+	}
 
 	const handleOnDrop = (acceptedFiles: File[]) => {
 		if (acceptedFiles.length == 0) {
-			alert("no files detected")
+			alert("Invalid file")
 			return
 		}
 		setPrincessFaceImg(acceptedFiles[0])
@@ -77,26 +84,39 @@ export default function Page() {
 							height={200}
 							alt="User Princess Image"
 						/>
-						<Icon icon={ArrowRightCircleIcon} className="absolute right-0" size='xl' />
+						<Icon icon={ArrowRightCircleIcon} className="absolute top-1/2 right-0" size='xl' />
 					</div>)}	
         </Card>
       
         <Card className="flex flex-col items-center justify-center">
           <Image
-            src="https://cdn.handcraftedgames.co/cards/princess-scan1.jpg"
+            src="https://cdn.handcraftedgames.co/cards/8-princess.jpg"
             width={200}
             height={200}
             alt="Card Princess Image"
           />
 
 					{userPrincessImgUrl && (<div>
-						<Icon icon={ArrowRightCircleIcon} className="absolute right-0" size='xl' />
+						<Icon icon={ArrowRightCircleIcon} className="absolute top-1/2 right-0" size='xl' />
 					</div>)}	
         </Card>
         
-          <Button size="sm" onClick={onPrincessSubmit}>Create</Button>
+          {(!generatedImgUrl && !isSubmitting) && (<Button size="sm" onClick={onPrincessSubmit} disabled={userPrincessImgUrl == null}>Create</Button>)}
+					{(!generatedImgUrl && isSubmitting) && (
+						<Card className="flex items-center justify-center">
+							<Text>Generating Image ...</Text>
+						</Card>)}
+					{generatedImgUrl && 
+						<Card className="flex items-center justify-center">
+							<Image
+								src={generatedImgUrl}
+								width={200}
+								height={200}
+								alt="Generated Princess Image"
+							/>
+						</Card>}
       </Grid>
 			
 		</main>
-	);
+	)
 }

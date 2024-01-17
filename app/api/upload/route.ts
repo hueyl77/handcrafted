@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Readable } from 'stream'
-import https from 'https'
-import { pipeline } from 'node:stream/promises';
+import { upload, uploadURL } from '../bunny/route'
 import { swapFaceToGameCard } from '../akool/route'
+import { isImgUrl, sleep } from '../../../src/utils'
 
 export async function POST(request: NextRequest) {
+  const cardTypeName = "princess"
+
   const data = await request.formData()
   const file: File | null = data.get('princessFaceImg') as unknown as File
 
@@ -12,43 +13,41 @@ export async function POST(request: NextRequest) {
     throw new Error("Missing Image File")
   }
 
-  const bytes = await file.arrayBuffer()
-  const buffer = Buffer.from(bytes)
-
-  const readStream = Readable.from(buffer)
   const filename = `${Date.now()}-${file.name}`
 
-  const options = {
-    method: 'PUT',
-    host: 'la.storage.bunnycdn.com',
-    path: `/handcrafted-luvletter/user-images/${filename}`,
-    headers: {
-      AccessKey: process.env.BUNNY_API_KEY,
-      'Content-Type': 'application/octet-stream',
-    },
+  const path = `/handcrafted-luvletter/user-images/${filename}`
+
+  await upload(file, path)
+
+  const sourceImgUrl = `https://cdn.handcraftedgames.co/user-images/${filename}`
+	const faceswapRes =  await swapFaceToGameCard(cardTypeName, sourceImgUrl);
+
+  const princessFilename = `${Date.now()}-generated-${cardTypeName}.jpg`
+
+  await sleep(1000)
+
+  let isImage = await isImgUrl(faceswapRes.data.url)
+  let tries = 1
+  const MAX_TRIES = 60
+
+  do {
+    await sleep(3000)
+
+    isImage = await isImgUrl(faceswapRes.data.url)
+    tries++
+  } while (!isImage && tries < MAX_TRIES)
+
+  if (tries === MAX_TRIES) {
+    throw new Error("Timed out generating image")
   }
-
-  const req = https.request(options, (res) => {
-    res.on('data', async (resp) => {
-      console.log(resp.toString('utf8'))
-
-      const sourceImgUrl = `https://cdn.handcraftedgames.co/user-images/${filename}`
-	    const faceswapRes =  await swapFaceToGameCard("princess", sourceImgUrl); 
-      console.log("faceswapRes: ", faceswapRes)
-    })
-  })
-
-  req.on('error', (error) => {
-    console.error("Bunny.net error: ", error)
-  })
-
-  // readStream.pipe(req)
-  const endPipeline = pipeline(readStream, req);
-
-  let result = await endPipeline;
+  
+  if (isImage) {
+    const generatedPath = `/handcrafted-luvletter/transformed/${princessFilename}`
+    await uploadURL(faceswapRes.data.url, princessFilename, generatedPath)
+  }
 
   return NextResponse.json({
     success: true,
-    imgUrl: `https://cdn.handcraftedgames.co/user-images/${filename}`
+    imgUrl: `https://cdn.handcraftedgames.co/transformed/${princessFilename}`
   })
 }
