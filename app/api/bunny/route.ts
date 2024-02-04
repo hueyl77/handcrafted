@@ -73,6 +73,7 @@ async function doRequest(options: requestOptions, file: File) {
     });
 
     req.on('error', (err) => {
+      console.log("\nUpload Error: ", err)      
       reject(err);
     });
 

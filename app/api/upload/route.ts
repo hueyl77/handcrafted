@@ -3,11 +3,13 @@ import { upload, uploadURL } from '../bunny/route'
 import { swapFaceToGameCard } from '../akool/route'
 import { isImgUrl, sleep } from '../../../src/utils'
 
+import { PrismaClient } from '@prisma/client'
+
 export async function POST(request: NextRequest) {
-  const cardTypeName = "princess"
 
   const data = await request.formData()
-  const file: File | null = data.get('princessFaceImg') as unknown as File
+  const file: File | null = data.get('faceImg') as unknown as File
+  const cardType: string = data.get('cardType') as string
 
   if (!file) {
     throw new Error("Missing Image File")
@@ -15,14 +17,15 @@ export async function POST(request: NextRequest) {
 
   const filename = `${Date.now()}-${file.name}`
 
-  const path = `/handcrafted-luvletter/user-images/${filename}`
+  const path = `/handcrafted/luvletter/user-images/${filename}`
 
-  await upload(file, path)
+  const uploadRes = await upload(file, path)
+  console.log("\nuploadRes: ", uploadRes)
 
-  const sourceImgUrl = `https://cdn.handcraftedgames.co/user-images/${filename}`
-	const faceswapRes =  await swapFaceToGameCard(cardTypeName, sourceImgUrl);
+  const sourceImgUrl = `https://cdn.handcraftedgames.co/luvletter/user-images/${filename}`
+	const faceswapRes =  await swapFaceToGameCard(cardType, sourceImgUrl);
 
-  const princessFilename = `${Date.now()}-generated-${cardTypeName}.jpg`
+  const cardFilename = `${Date.now()}-generated-${cardType}.jpg`
 
   await sleep(1000)
 
@@ -40,14 +43,26 @@ export async function POST(request: NextRequest) {
   if (tries === MAX_TRIES) {
     throw new Error("Timed out generating image")
   }
+
+  const generatedUrl = `https://cdn.handcraftedgames.co/luvletter/transformed/${cardFilename}`
   
   if (isImage) {
-    const generatedPath = `/handcrafted-luvletter/transformed/${princessFilename}`
-    await uploadURL(faceswapRes.data.url, princessFilename, generatedPath)
+    const generatedPath = `/handcrafted/luvletter/transformed/${cardFilename}`
+    await uploadURL(faceswapRes.data.url, cardFilename, generatedPath)
+
+    const prisma = new PrismaClient()
+    await prisma.luvletter_generated_cards.create({
+      data: {
+        user_id: 'huey@legitimize.io',
+        name: cardType,
+        status: 'completed',
+        url: generatedUrl,
+      },
+    })
   }
 
   return NextResponse.json({
     success: true,
-    imgUrl: `https://cdn.handcraftedgames.co/transformed/${princessFilename}`
+    imgUrl: generatedUrl
   })
 }
