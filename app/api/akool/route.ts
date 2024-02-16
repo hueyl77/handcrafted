@@ -96,7 +96,7 @@ export async function detectFace(imgUrl: string): Promise<DetectFaceRes> {
 	})
 
 	const resJson = await response.json()
-
+console.log("resJson: ", resJson)
 	return resJson
 }
 
@@ -151,7 +151,7 @@ export async function swapFaceToGameCard(
 ): Promise<FaceSwapRes> {
 	const sourceFaceDetect = await detectFace(sourceImgUrl)
 	const sourceKeyPoints = sourceFaceDetect.landmarks
-
+console.log("sourceFaceDetect: ", sourceFaceDetect)
 	const sourceX1 = sourceKeyPoints[0][0]
 	const sourceY1 = sourceKeyPoints[0][1]
 	const sourceX2 = sourceKeyPoints[1][0]
