@@ -20,7 +20,6 @@ export async function POST(request: NextRequest) {
   const path = `/handcrafted/luvletter/user-images/${filename}`
 
   const uploadRes = await upload(file, path)
-  console.log("\nuploadRes: ", uploadRes)
 
   const sourceImgUrl = `https://cdn.handcraftedgames.co/luvletter/user-images/${filename}`
 	const faceswapRes =  await swapFaceToGameCard(cardType, sourceImgUrl);
