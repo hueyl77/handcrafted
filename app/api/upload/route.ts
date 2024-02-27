@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { upload, uploadURL } from '../bunny/route'
 import { swapFaceToGameCard } from '../akool/route'
-import { isImgUrl, sleep } from '../../../src/utils'
+import { isImgUrl, sleep } from '../../../lib/utils'
 
 import { PrismaClient } from '@prisma/client'
 

@@ -8,10 +8,10 @@ $ yarn install
 $ npm install
 ```
 
-### Generate prisma models
+### Migrate and Generate db (prisma) models
 
 ```
-$ npx prisma generate
+$ yarn migrate
 ```
 
 ### start server

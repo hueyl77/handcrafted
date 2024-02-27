@@ -17,6 +17,23 @@ model users {
   deleted_at DateTime? @db.Timestamp()
 }
 
+model user_metadata {
+  user_id   Int       @id
+  email     String    @db.VarChar(255)
+  credits   Int       @default(0) @db.Integer
+  nickname  String?   @db.VarChar(255)
+  avatarSrc String?   @db.Text()
+  birthday  DateTime? @db.Timestamp()
+
+  street1 String? @db.VarChar(255)
+  street2 String? @db.VarChar(255)
+  city    String? @db.VarChar(255)
+  region  String? @db.VarChar(255)
+  zip     String? @db.VarChar(255)
+  country String? @db.VarChar(255)
+  phone   String? @db.VarChar(255)
+}
+
 model luvletter_generated_cards {
   id         Int       @id @default(autoincrement())
   user_id    String    @db.VarChar(255)

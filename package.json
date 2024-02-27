@@ -7,11 +7,12 @@
     "postinstall": "prisma generate",
     "start": "next start",
     "lint": "next lint",
-    "migrate": "npx prisma migrate dev"
+    "migrate": "npx prisma migrate dev && npx prisma generate"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.1.1",
+    "@kinde-oss/kinde-auth-nextjs": "^2.1.13",
     "@prisma/client": "^5.9.1",
     "@tremor/react": "^3.10.0",
     "@types/js-cookie": "^3.0.5",
