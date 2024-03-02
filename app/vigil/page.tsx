@@ -65,8 +65,8 @@ export default function Page() {
                 decides on one of two events to accomplish that day</span>
 
               <ul className="list-inside list-disc ml-4">
-                <li>Vote to complete one of the objectives: If more than half the players (alive or dead) voted yes, the objective is completed.</li>
-                <li>Vote to hang someone: If more than half the players (alive or dead) vote on a person, that player is hanged.</li>
+                <li>Vote to complete one of the objectives: The objective with the most votes by the players (alive or dead), gets executed.</li>
+                <li>Vote to hang someone: The player with the most votes by all the players (alive or dead) is hanged.</li>
               </ul>
             </li>
 
