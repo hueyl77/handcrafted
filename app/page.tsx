@@ -16,8 +16,13 @@ export default async function IndexPage({
 
       <Text>Select a game below to get started</Text>
 
-      <div className="mt-8">
-        <a href="/luvletter">Luv Letter</a>
+      <div className="mt-8 grid grid-cols-auto gap-8">
+        <div>
+          <a href="/luvletter">Luv Letter</a>
+        </div>
+        <div>
+          <a href="/vigil">Vigil Chronicles</a>
+        </div>
       </div>
     </main>
   );

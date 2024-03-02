@@ -1,18 +1,18 @@
 "use client";
 
 import { Card, Grid, Title, Text } from "@tremor/react";
-import Link from 'next/link'
+import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Page() {
-	
+
 	return (
 		<main className="p-4 md:p-10 mx-auto max-w-7xl">
 			<Title>LuvLetter Personalized</Title>
 			<Text>Click a card to upload and swap in your own face.</Text>
 
 			<Grid numItems={1} numItemsSm={2} numItemsLg={3} className="gap-4 mt-4">
-				
+
 				<Card className="flex flex-col items-center justify-center">
 					<Text className="mb-2">8. Princess (x1)</Text>
 					<Link href="/luvletter/8-princess">
@@ -36,7 +36,7 @@ export default function Page() {
 						/>
 					</Link>
 				</Card>
-			
+
 				<Card className="flex flex-col items-center justify-center">
 					<Text className="mb-2">6. King (x1)</Text>
 					<Link href="/luvletter/6-king">
@@ -120,9 +120,9 @@ export default function Page() {
 						/>
 					</Link>
 				</Card>
-				
+
 			</Grid>
-			
+
 		</main>
 	);
 }

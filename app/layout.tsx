@@ -9,7 +9,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 export const metadata = {
 	title: "Handcrafted Games Demo",
 	description:
-		"A user admin dashboard configured with Next.js, Postgres, NextAuth, Tailwind CSS, TypeScript, ESLint, and Prettier.",
+		"Create Printable Custom Personalized Board Games.",
 };
 
 export default async function RootLayout({
