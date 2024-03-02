@@ -102,16 +102,24 @@ export default function Page() {
             All players start with the Level 1 ability.
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-6 mt-8">
-            <div className="">
-              Image 1
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mt-8">
+            <div className="relative">
+              <Image src="/img/vigil/constable-male.png"
+                width={256}
+                height={384}
+                className="rounded-xl border-[3px]"
+                alt="Constable Male" />
             </div>
-            <div className="">
-              Image 2
+            <div className="relative">
+              <Image src="/img/vigil/constable-female.png"
+                width={256}
+                height={384}
+                className="rounded-xl border-[3px]"
+                alt="Constable Female" />
             </div>
             <div className="grid-col col-span-1 md:col-span-4">
               <label className="font-bold">Constable (Constable Station)</label>
-              <ol className="mt-4 list-disc">
+              <ol className="mt-4 list-disc list-inside">
                 <li>Level 1: Investigate a person.  The answer will be three roles, the real role, and 2 random roles.</li>
                 <li>Level 2: Investigate a person.  The answer will be 2 roles: the real role and a random role.</li>
                 <li>Level 3: Investigate a person.  The answer will be the real role of that person.</li>
@@ -119,16 +127,24 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-6 mt-8">
-            <div className="">
-              Image 1
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-6 mt-8">
+            <div className="relative">
+              <Image src="/img/vigil/doctor-male.png"
+                width={256}
+                height={384}
+                className="rounded-xl border-[3px]"
+                alt="Doctor Male" />
             </div>
-            <div className="">
-              Image 2
+            <div className="relative">
+              <Image src="/img/vigil/doctor-female.png"
+                width={256}
+                height={384}
+                className="rounded-xl border-[3px]"
+                alt="Doctor Female" />
             </div>
             <div className="grid-col col-span-1 md:col-span-4">
               <label className="font-bold">Doctor (Hospital)</label>
-              <ol className="mt-4 list-disc">
+              <ol className="mt-4 list-disc list-inside">
                 <li>Level 1: choose one player to heal if that person is injured,  can not revive dead people</li>
                 <li>Level 2: heal two different people</li>
                 <li>Level 3: revive a dead person</li>
@@ -136,16 +152,24 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-6 mt-8">
-            <div className="">
-              Image 1
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-6 mt-8">
+            <div className="relative">
+              <Image src="/img/vigil/guard-male.png"
+                width={256}
+                height={384}
+                className="rounded-xl border-[3px]"
+                alt="Guard Male" />
             </div>
-            <div className="">
-              Image 2
+            <div className="relative">
+              <Image src="/img/vigil/guard-female.png"
+                width={256}
+                height={384}
+                className="rounded-xl border-[3px]"
+                alt="Guard Female" />
             </div>
             <div className="grid-col col-span-1 md:col-span-4">
               <label className="font-bold">Guard (Watch Tower)</label>
-              <ol className="mt-4 list-disc">
+              <ol className="mt-4 list-disc list-inside">
                 <li>Level 1: Guard a person.  If a person is attacked, they get hurt instead.</li>
                 <li>Level 2: Guard a person or building.  If a person or a building is attacked, they get hurt instead.</li>
                 <li>Level 3: Protect themselves and guard a person or building.  Their protection guards against one demon attack.</li>
@@ -153,16 +177,24 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-6 mt-8">
-            <div className="">
-              Image 1
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-6 mt-8">
+            <div className="relative">
+              <Image src="/img/vigil/mayor-male.png"
+                width={256}
+                height={384}
+                className="rounded-xl border-[3px]"
+                alt="Mayor Male" />
             </div>
-            <div className="">
-              Image 2
+            <div className="relative">
+              <Image src="/img/vigil/mayor-female.png"
+                width={256}
+                height={384}
+                className="rounded-xl border-[3px]"
+                alt="Mayor Female" />
             </div>
             <div className="grid-col col-span-1 md:col-span-4">
               <label className="font-bold">Mayor (Town Hall)</label>
-              <ol className="mt-4 list-disc">
+              <ol className="mt-4 list-disc list-inside">
                 <li>Level 1: Use a level one power of another villager (that is still alive and has their building intact).</li>
                 <li>Level 2: Use a level one or level two power of another villager (that is still alive and has their building intact).</li>
                 <li>Level 3: Use level 1-3 powers of any villagers (that is still alive) (that is still alive and have their building intact).</li>
@@ -170,16 +202,24 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-6 mt-8">
-            <div className="">
-              Image 1
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-6 mt-8">
+            <div className="relative">
+              <Image src="/img/vigil/priest-male.png"
+                width={256}
+                height={384}
+                className="rounded-xl border-[3px]"
+                alt="Priest Male" />
             </div>
-            <div className="">
-              Image 2
+            <div className="relative">
+              <Image src="/img/vigil/priest-female.png"
+                width={256}
+                height={384}
+                className="rounded-xl border-[3px]"
+                alt="Priest Female" />
             </div>
             <div className="grid-col col-span-1 md:col-span-4">
               <label className="font-bold">Priest (Church)</label>
-              <ol className="mt-4 list-disc">
+              <ol className="mt-4 list-disc list-inside">
                 <li>Level 1: cast one protection spell (can protect against one attack.
                   If a demon at level 3 attacks the same person twice, the first attack destroys
                   the protection. The second attack will injure the person or kill them if they are
@@ -211,16 +251,24 @@ export default function Page() {
               during the same night).</div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-6 mt-8">
-            <div className="">
-              Image 1
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-6 mt-8">
+            <div className="relative">
+              <Image src="/img/vigil/demon-male.png"
+                width={256}
+                height={384}
+                className="rounded-xl border-[3px]"
+                alt="Demon Male" />
             </div>
-            <div className="">
-              Image 2
+            <div className="relative">
+              <Image src="/img/vigil/demon-female.png"
+                width={256}
+                height={384}
+                className="rounded-xl border-[3px]"
+                alt="Demon Female" />
             </div>
             <div className="grid-col col-span-1 md:col-span-4">
               <label className="font-bold">Demon</label>
-              <ol className="mt-4 list-disc">
+              <ol className="mt-4 list-disc list-inside">
                 <li>Level 1: Attack 1 person.  If the target is not injured, they become injured.
                   If the target is already injured, they are killed. Can not attack a target that
                   has been attacked by another demon on the same night.</li>
