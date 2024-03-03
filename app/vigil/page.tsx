@@ -46,8 +46,8 @@ export default function Page() {
             <li>In Vigil Chronicles, strategic gameplay is key.
               The villagers can claim victory by eliminating all Demon team players or
               successfully completing the <span className="font-bold">town objectives.</span></li>
-            <li>The demon Team can seize victory when <span className="font-bold">the number of demons
-              in the village surpasses the number of villagers</span> at any point in the game.</li>
+            <li>The demon Team can seize victory when <span className="font-bold">the number of demons alive
+              is equal to or surpasses the number of villagers alive</span> at any point in the game.</li>
             <li><span>The Town&apos;s Objectives are based on the number of villagers and their roles.  If all the buildings of all the existing roles are built, the villagers win.</span>
               <ol className="list-disc ml-8">
                 <li>Finish building the Church (activates Priest Ability)</li>
