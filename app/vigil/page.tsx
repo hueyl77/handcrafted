@@ -170,9 +170,9 @@ export default function Page() {
             <div className="grid-col col-span-1 md:col-span-4">
               <label className="font-bold">Guard (Watch Tower)</label>
               <ol className="mt-4 list-disc list-inside">
-                <li>Level 1: Guard a person.  If a person is attacked, they get hurt instead.</li>
-                <li>Level 2: Guard a person or building.  If a person or a building is attacked, they get hurt instead.</li>
-                <li>Level 3: Protect themselves and guard a person or building.  Their protection guards against one demon attack.</li>
+                <li>Level 1: Guard a person or a building.  If the target is attacked, they get hurt instead.</li>
+                <li>Level 2: Guard themselves and a person or building.  If the person or the building is attacked, they get hurt instead.</li>
+                <li>Level 3: Guard any 2 people or buildings.</li>
               </ol>
             </div>
           </div>
@@ -195,9 +195,9 @@ export default function Page() {
             <div className="grid-col col-span-1 md:col-span-4">
               <label className="font-bold">Mayor (Town Hall)</label>
               <ol className="mt-4 list-disc list-inside">
-                <li>Level 1: Use a level one power of another villager (that is still alive and has their building intact).</li>
-                <li>Level 2: Use a level one or level two power of another villager (that is still alive and has their building intact).</li>
-                <li>Level 3: Use level 1-3 powers of any villagers (that is still alive) (that is still alive and have their building intact).</li>
+                <li>Level 1: Use a level one power of another villager (the corresponding building has to be intact).</li>
+                <li>Level 2: Use a level one or level two power of another villager (the corresponding building has to be in intact).</li>
+                <li>Level 3: Use level 1-3 powers of any villagers (the corresponding building has to be in intact).</li>
               </ol>
             </div>
           </div>
