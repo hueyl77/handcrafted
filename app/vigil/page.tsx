@@ -35,6 +35,12 @@ export default function Page() {
             <p className="mt-4">
               In order for Vigilstone to prosper, the villagers must weed out the demons among them.  They must dispatch the monsters one by one, until the land is safe to thrive once more.
             </p>
+
+            <p className="mt-12 text-left">
+              Email hueyl77@gmail.com
+              <br />for questions, comments, or suggestions!
+              <br />Thanks!
+            </p>
           </div>
         </div>
 
@@ -89,6 +95,15 @@ export default function Page() {
                     <li>Vote to hang someone: The player with the most votes by all the players (alive or dead) is hanged.</li>
                     <li>In the case of ties, nothing happens.  Players can abstain from voting.</li>
                   </ul>
+
+                  <div className="mt-4">
+                    7. <strong>Night Phase:</strong> During the night phase, if the corresponding building is built,
+                    <br />Villagers can activate their powers once that night.
+                    <br /><br />Demons can choose their actions based on their levels,
+                    without a need for corresponding buildings to be built.
+                    <br /><br />Note: a player can not be attacked by more than one demon per night.  But a player
+                    can be attacked twice by the same demon (if it is a level 3 demon).
+                  </div>
                 </span>
 
 
@@ -102,9 +117,7 @@ export default function Page() {
               </div>
             </li>
 
-            <li className="mt-3">7. <strong>Night Phase:</strong> During the night phase, if the corresponding building is built, Villagers can activate their powers once that night.</li>
-
-            <li className="mt-3">8. Or a player can choose to grow their powers instead. They level up to the next level right away.  But they cannot do anything else during the night.</li>
+            <li className="mt-10">8. Or a player can choose to grow their powers instead. They level up to the next level right away.  But they cannot do anything else during the night.</li>
 
             <li className="mt-3">9. Demons know each other, but villagers do not.</li>
 
@@ -211,7 +224,7 @@ export default function Page() {
                 <li>Level 2: Guard themselves and another person or building.  If the guard gets attacked, they don&apos;t get hurt.
                   If a different guarded person or the building is attacked, the guard gets hurt instead.</li>
                 <li>Level 3: Guard any 2 people or buildings, including themselves.  If a different guarded person or the
-                  building is attacked, the guard gets hurt instead.</li>
+                  building is attacked, the guard gets hurt instead.  The guard can not guard the same target twice.</li>
               </ol>
             </div>
           </div>
@@ -324,7 +337,63 @@ export default function Page() {
             </div>
           </div>
         </div>
+
+        <div className="mt-12">
+          <h3 className="font-bold">Moderator Notes:</h3>
+
+          <ol className="mt-4 leading-8 list-inside list-none">
+            <li>1. Always ask player&apos;s name when voting or completing actions (not their roles)</li>
+            <li className="mt-4">2. At the start of each day, announce:</li>
+            <li className="ml-4">Which buildings are built or intact, which are sabotaged</li>
+            <li className="ml-4">Which players are injured or dead</li>
+            <li className="ml-4">Vague actions during the night: e.g. The Priest protected, the guard guarded, the doctor healed,
+              but player [name] was injured and player [name] was killed.  Building [name] was sabotaged.</li>
+
+            <li className="mt-4">3. Suggested player count:</li>
+            <li className="ml-4">
+              2 players.  One play 2 demons, the other play 5 villagers.
+              Omit the constable and randomly picked the other roles.
+            </li>
+            <li className="ml-4">
+              3 players.  One play 2 demons, the other play 2 villagers each.
+              Omit the constable and randomly picked the other roles.
+            </li>
+            <li className="ml-4">
+              4 players.  One play 2 demons, the others play 1 villagers each.
+            </li>
+            <li className="ml-4">
+              5 players.  One play 2 demons, the others play 1 villagers each.
+            </li>
+            <li className="ml-4">
+              6 players.  2 demons.  5 villagers, one player controls 2 villagers.
+            </li>
+            <li className="ml-4">
+              7 players.  2 demons.  5 villagers.
+            </li>
+            <li className="ml-4">
+              8 players.  2 demons.  6 villagers.  One demon start at level 2.
+            </li>
+            <li className="ml-4">
+              9 players.  3 demons.  6 villagers.
+            </li>
+            <li className="ml-4">
+              10 players.  3 demons.  7 villagers.
+            </li>
+            <li className="ml-4">
+              11 players.  3 demons.  8 villagers.  One demon start at level 2.
+            </li>
+            <li className="ml-4">
+              12 players.  4 demons.  8 villagers.
+            </li>
+            <li className="ml-4">
+              13 players.  4 demons.  9 villagers.
+            </li>
+            <li className="ml-4">
+              14 players.  5 demons.  10 villagers.
+            </li>
+          </ol>
+        </div>
       </Card>
-    </main>
+    </main >
   )
 } 

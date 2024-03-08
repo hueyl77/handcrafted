@@ -5,6 +5,7 @@ import Nav from "./nav";
 import { Suspense } from "react";
 
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import Footer from "./footer";
 
 export const metadata = {
 	title: "Handcrafted Games Demo",
@@ -28,7 +29,8 @@ export default async function RootLayout({
 					<Nav />
 				</Suspense>
 				{children}
-				<Analytics />
+
+				<Footer />
 			</body>
 		</html>
 	);
