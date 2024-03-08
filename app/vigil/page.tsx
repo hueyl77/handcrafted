@@ -1,6 +1,6 @@
 import { Card, Title, Text } from "@tremor/react";
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Page() {
 
@@ -118,12 +118,12 @@ export default function Page() {
 
             <li className="mt-3">14. Sabotage action occurs last in the night (this means villagers with the corresponding building can use their powers that night before the building is sabotaged)</li>
 
-            <li className="mt-3">15. When telling the moderator who to attack, heal, guard, protect, or hang, use the player's name (not their roles).</li>
+            <li className="mt-3">15. When telling the moderator who to attack, heal, guard, protect, or hang, use the player&apos;s name (not their roles).</li>
 
             <li className="mt-3">16. The moderator can tell the doctor, priest, or guard which players are injured when asking for a decision on who to heal, protect, or guard.
               e.g. Player X is injured, would you like to heal them?  Or, Player X and Player Y are injured, would you like to heal them?</li>
 
-            <li>18. On each new day, the Moderator should announce which buildings are built and still intact. And which players were injured or killed in the night (don't say their roles).</li>
+            <li>18. On each new day, the Moderator should announce which buildings are built and still intact. And which players were injured or killed in the night (don&apos;t say their roles).</li>
 
             <li className="mt-3">17. The game starts during the day phase.</li>
           </ol>
@@ -208,7 +208,7 @@ export default function Page() {
               <label className="font-bold">Guard (Watch Tower)</label>
               <ol className="mt-4 list-disc list-inside">
                 <li>Level 1: Guard a person or a building.  If the target is attacked, they get hurt instead.</li>
-                <li>Level 2: Guard themselves and another person or building.  If the guard gets attacked, they don't get hurt.
+                <li>Level 2: Guard themselves and another person or building.  If the guard gets attacked, they don&apos;t get hurt.
                   If a different guarded person or the building is attacked, the guard gets hurt instead.</li>
                 <li>Level 3: Guard any 2 people or buildings, including themselves.  If a different guarded person or the
                   building is attacked, the guard gets hurt instead.</li>
@@ -318,7 +318,7 @@ export default function Page() {
                 <li className="mt-3"><span>If attacking the same target twice and that person has no protection spell, that person dies.</span>
                   <p>If the person has a protection spell, they are injured.</p>
                   <p>If the person has 2 protection spells, they are unharmed.</p>
-                  <p>The rule that different demons can't target the same person still apply.</p>
+                  <p>The rule that different demons can&apos;t target the same person still apply.</p>
                 </li>
               </ol>
             </div>
