@@ -1,8 +1,8 @@
-"use client";
+"use client"
 
-import { Card, Grid, Title, Text } from "@tremor/react";
-import Link from 'next/link';
-import Image from 'next/image';
+import { Card, Grid, Title, Text } from "@tremor/react"
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Page() {
 
@@ -124,5 +124,5 @@ export default function Page() {
 			</Grid>
 
 		</main>
-	);
+	)
 }

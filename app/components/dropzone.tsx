@@ -1,9 +1,9 @@
 'use client'
 
-import React, {useMemo} from 'react';
-import {useDropzone} from 'react-dropzone';
+import React, { useMemo } from 'react'
+import { useDropzone } from 'react-dropzone'
 import { UserCircleIcon } from "@heroicons/react/24/outline"
-import { Icon, Text } from "@tremor/react";
+import { Icon, Text } from "@tremor/react"
 
 const baseStyle = {
   flex: 1,
@@ -18,19 +18,19 @@ const baseStyle = {
   color: '#bdbdbd',
   outline: 'none',
   transition: 'border .24s ease-in-out'
-};
+}
 
 const focusedStyle = {
   borderColor: '#2196f3'
-};
+}
 
 const acceptStyle = {
   borderColor: '#00e676'
-};
+}
 
 const rejectStyle = {
   borderColor: '#ff1744'
-};
+}
 
 export default function Dropzone(props: any) {
   const {
@@ -39,7 +39,7 @@ export default function Dropzone(props: any) {
     isFocused,
     isDragAccept,
     isDragReject
-  } = useDropzone(props);
+  } = useDropzone(props)
 
   const style = useMemo(() => ({
     ...baseStyle,
@@ -50,16 +50,16 @@ export default function Dropzone(props: any) {
     isFocused,
     isDragAccept,
     isDragReject
-  ]);
+  ])
 
   return (
     <div className="container">
-      <div {...getRootProps({style})} className='flex-col cursor-pointer'>
+      <div {...getRootProps({ style })} className='flex-col cursor-pointer'>
         <input {...getInputProps()} />
         <Icon icon={UserCircleIcon} size='xl' />
         <Text>Click or Drop File</Text>
         <Text>Images only.  Max 25MB</Text>
       </div>
     </div>
-  );
+  )
 }

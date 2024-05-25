@@ -1,7 +1,7 @@
-import Navbar from './navbar';
+import Navbar from './navbar'
 
 
 export default async function Nav() {
 
-  return <Navbar user={null} />;
+  return <Navbar user={null} />
 }

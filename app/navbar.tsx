@@ -1,23 +1,23 @@
-'use client';
+'use client'
 
-import { Fragment } from 'react';
-import { usePathname } from 'next/navigation';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { signIn, signOut } from 'next-auth/react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { Fragment } from 'react'
+import { usePathname } from 'next/navigation'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
+import Link from 'next/link'
+import { LoginLink, LogoutLink } from '@kinde-oss/kinde-auth-nextjs'
 
 const navigation = [
   { name: 'Handcrafted Games', href: '/' },
-];
+]
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(' ')
 }
 
 export default function Navbar({ user }: { user: any }) {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
   return (
     <Disclosure as="nav" className="bg-white shadow-sm">
@@ -79,29 +79,21 @@ export default function Navbar({ user }: { user: any }) {
                       {user ? (
                         <Menu.Item>
                           {({ active }) => (
-                            <button
-                              className={classNames(
-                                active ? 'bg-gray-100' : '',
-                                'flex w-full px-4 py-2 text-sm text-gray-700'
-                              )}
-                              onClick={() => signOut()}
-                            >
-                              Sign out
-                            </button>
+                            <div className='py-2 px-4'>
+                              <LogoutLink>
+                                <button type="button" className='w-full text-left hover:bg-gray-100 px-4 py-2'>Sign out</button>
+                              </LogoutLink>
+                            </div>
                           )}
                         </Menu.Item>
                       ) : (
                         <Menu.Item>
                           {({ active }) => (
-                            <button
-                              className={classNames(
-                                active ? 'bg-gray-100' : '',
-                                'flex w-full px-4 py-2 text-sm text-gray-700'
-                              )}
-                              onClick={() => signIn('github')}
-                            >
-                              Sign in
-                            </button>
+
+                            <LoginLink>
+                              <button type="button" className='w-full text-left hover:bg-gray-100 px-4 py-2'>Sign in</button>
+                            </LoginLink>
+
                           )}
                         </Menu.Item>
                       )}
@@ -164,22 +156,16 @@ export default function Navbar({ user }: { user: any }) {
                     </div>
                   </div>
                   <div className="mt-3 space-y-1">
-                    <button
-                      onClick={() => signOut()}
-                      className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
-                    >
-                      Sign out
-                    </button>
+                    <LogoutLink>
+                      <button type="button" className='w-full text-left hover:bg-gray-100 px-4 py-2'>Sign out</button>
+                    </LogoutLink>
                   </div>
                 </>
               ) : (
-                <div className="mt-3 space-y-1">
-                  <button
-                    onClick={() => signIn('github')}
-                    className="flex w-full px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
-                  >
-                    Sign in
-                  </button>
+                <div className="mt-3 p-2 space-y-1">
+                  <LoginLink>
+                    <button type="button" className='w-full text-left hover:bg-gray-100 px-4 py-2'>Sign in</button>
+                  </LoginLink>
                 </div>
               )}
             </div>
@@ -187,5 +173,5 @@ export default function Navbar({ user }: { user: any }) {
         </>
       )}
     </Disclosure>
-  );
+  )
 }

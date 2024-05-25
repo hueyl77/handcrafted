@@ -1,7 +1,7 @@
-'use client';
+'use client'
 
-import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
-import Chart from './chart';
+import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react'
+import Chart from './chart'
 
 const website = [
   { name: '/home', value: 1230 },
@@ -9,14 +9,14 @@ const website = [
   { name: '/gallery', value: 471 },
   { name: '/august-discount-offer', value: 280 },
   { name: '/case-studies', value: 78 }
-];
+]
 
 const shop = [
   { name: '/home', value: 453 },
   { name: '/imprint', value: 351 },
   { name: '/shop', value: 271 },
   { name: '/pricing', value: 191 }
-];
+]
 
 const app = [
   { name: '/shop', value: 789 },
@@ -24,7 +24,7 @@ const app = [
   { name: '/about', value: 564 },
   { name: '/login', value: 234 },
   { name: '/downloads', value: 191 }
-];
+]
 
 const data = [
   {
@@ -42,7 +42,7 @@ const data = [
     stat: '2,543',
     data: app
   }
-];
+]
 
 export default function PlaygroundPage() {
   return (
@@ -75,5 +75,5 @@ export default function PlaygroundPage() {
       </Grid>
       <Chart />
     </main>
-  );
+  )
 }

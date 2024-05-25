@@ -1,6 +1,6 @@
-'use client';
+'use client'
 
-import { Card, AreaChart, Title, Text } from '@tremor/react';
+import { Card, AreaChart, Title, Text } from '@tremor/react'
 
 const data = [
   {
@@ -18,7 +18,7 @@ const data = [
     Sales: 3890,
     Profit: 2980
   }
-];
+]
 
 export default function Example() {
   return (
@@ -37,5 +37,5 @@ export default function Example() {
         yAxisWidth={60}
       />
     </Card>
-  );
+  )
 }

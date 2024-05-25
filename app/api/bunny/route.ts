@@ -18,7 +18,7 @@ export async function upload(file: File, path: string) {
     },
   }
 
-  const response = await doRequest(options, file);
+  const response = await doRequest(options, file)
   return response
 }
 
@@ -28,7 +28,7 @@ export async function uploadURL(fileUrl: string, filename: string, path: string)
   }
 
   const imgBlob = await fetchBlob(fileUrl)
-  const file = new File([imgBlob], filename);
+  const file = new File([imgBlob], filename)
 
   const options = {
     method: 'PUT',
@@ -40,7 +40,7 @@ export async function uploadURL(fileUrl: string, filename: string, path: string)
     },
   }
 
-  const response = await doRequest(options, file);
+  const response = await doRequest(options, file)
   return response
 }
 
@@ -60,32 +60,32 @@ async function doRequest(options: requestOptions, file: File) {
 
   return new Promise((resolve, reject) => {
     const req = https.request(options, (res) => {
-      res.setEncoding('utf8');
-      let responseBody = '';
+      res.setEncoding('utf8')
+      let responseBody = ''
 
       res.on('data', (chunk) => {
-        responseBody += chunk;
-      });
+        responseBody += chunk
+      })
 
       res.on('end', () => {
-        resolve(JSON.parse(responseBody));
-      });
-    });
+        resolve(JSON.parse(responseBody))
+      })
+    })
 
     req.on('error', (err) => {
       console.log("\nUpload Error: ", err)      
-      reject(err);
-    });
+      reject(err)
+    })
 
     const readStream = Readable.from(buffer)
 
-    readStream.pipe(req);
-  });
+    readStream.pipe(req)
+  })
 }
 
 async function fetchBlob(url: string) {
-  const response = await fetch(url);
+  const response = await fetch(url)
 
   // reading the stream as a blob instead of json
-  return response.blob();
+  return response.blob()
 }
