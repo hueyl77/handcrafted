@@ -14,7 +14,7 @@ CREATE TABLE "users" (
 -- CreateTable
 CREATE TABLE "luvletter_generated_cards" (
     "id" SERIAL NOT NULL,
-    "user_id" VARCHAR(255) NOT NULL,
+    "user_email" VARCHAR(255) NOT NULL,
     "name" VARCHAR(255) NOT NULL,
     "status" VARCHAR(255) NOT NULL,
     "url" VARCHAR(255),

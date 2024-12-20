@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
     const prisma = new PrismaClient()
     await prisma.luvletter_generated_cards.create({
       data: {
-        user_id: 'huey@legitimize.io',
+        user_email: 'huey@legitimize.io',
         name: cardType,
         status: 'completed',
         url: generatedUrl,
