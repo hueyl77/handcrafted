@@ -24,9 +24,9 @@ export default function Page() {
           </div>
           <div className="relative text-justify pr-8">
             <p>
-              Nestled between the gentle slopes of The Three Sisters, the village of Vigilstone is barely visible from the main road.
+              Nestled between the gentle slopes of two mountains, the village of Vigilstone is barely visible from the main road.
               A scattering of thatched rooftops mingled with clusters of old oaks and ash trees, seemingly idyllic next to the
-              glimmering river Lach.  New, unfinished buildings tell a story of beginnings, and of hope.
+              glimmering river.  New, unfinished buildings tell a story of beginnings, and of hope.
             </p>
             <p className="mt-4">
               But not all is as it seems.  A murder in the night.  Surely the spirits of this old new land has infiltrated the village.  The demons kill at night, and walk among the villagers at sunrise.
@@ -48,26 +48,42 @@ export default function Page() {
           <h3 className="font-bold">Rules</h3>
 
           <ol className="mt-4 leading-8 list-inside list-none">
-            <li>1. In Vigil Chronicles, strategic gameplay is key.
-              The villagers can claim victory by eliminating all Demon team players or
-              successfully completing the <span className="font-bold">town objectives.</span></li>
+            <li>1. Team villagers can claim victory by eliminating all the demons or
+              successfully <span className="font-bold">build all five buildings, </span>.</li>
             <li className="mt-3">2. The demon Team can seize victory when <span className="font-bold">the number of demons alive
-              is equal to or surpasses the number of villagers alive</span> at any point in the game.</li>
-            <li className="mt-3">3. A moderator is required to run the game.  They will assign random roles to the players, instruct the players
+              surpasses the number of villagers alive</span>, 
+              or if the day starts with 0 buildings standng.  The game starts with one random building already built.</li>
+            <li className="mt-3">3. A moderator runs the game.  They will assign random roles to the players, instruct the players
               to wake up at night to execute their powers, moderate votings during the day, and keep track of the state of the game.
             </li>
 
             <li className="my-4">
               <div className="grid grid-cols-1 md:grid-cols-6 gap-2">
                 <span className="md:col-span-4">
-                  <p>4. The <i>Town&aposs Objectives</i> are based on the number of villagers and their roles.</p>
-                  <p className="ml-4">If all the buildings of all the existing roles are built, the villagers win.</p>
+                  <div>
+                    4. The five buildings are:
+                    <br/>
+                    <div className="ml-4">
+                      the Town Hall, <br/>
+                      the Hospital, <br/>
+                      the Church, <br/>
+                      the Contable Station, <br/>
+                      the Watch Tower.
+                    </div>
+                    <br/>
+                    If all five buildings are built, and the demons fail to kill enough villagers 
+                    that night, the villagers win.
+                    <br/><br/>
+                    If all five buildings are destroyed, the demons win the following morning.
+                    <br/><br/>
+                    The completed buildings grant extra power to the role they are associated with.
+                  </div>
                   <ol className="list-disc ml-8">
-                    <li>Finish building the Church (activates Priest Power)</li>
-                    <li>Finish building the Hospital (activates the Doctor&aposs Power)</li>
-                    <li>Finish building the Watch Tower (activates the Guard&aposs Power)</li>
-                    <li>Finish building the Constable&aposs Station (activates the Constable&aposs Power)</li>
-                    <li>Finish building the Town Hall (activates the Mayor&aposs Abilty)</li>
+                    <li>Finish building the Church (enhances the Priests' Power)</li>
+                    <li>Finish building the Hospital (enhances the Doctors' Power)</li>
+                    <li>Finish building the Watch Tower ((enhances the Guards' Power)</li>
+                    <li>Finish building the Constable&apos; Station (enhances the Constables' Power)</li>
+                    <li>Finish building the Town Hall (enhances the Mayor's Power)</li>
                   </ol>
                 </span>
 
@@ -86,25 +102,30 @@ export default function Page() {
             <li className="my-4">
               <div className="grid grid-cols-1 md:grid-cols-6 gap-2">
                 <span className="md:col-span-4 md:pr-[100px]">
-                  <p>6. <strong>Day phase:</strong> The whole village, including ghosts,
-                    decides which event to accomplish that day: hang a person or complete an objective.</p>
+                  <p>6. <strong>Day phase:</strong> The village (including hidden demons disguised as a villager), 
+                    discuss which building to build, this will affect the Mayor's decision at night.  
+                    Only the mayor can order a building to be built at night.</p>
 
                   <ul className="list-inside list-disc ml-4 md:pr-[100px]">
-                    <li>Vote to complete one of the objectives: The objective with the most votes by the players (alive or dead), gets executed.</li>
-                    <li>Vote to hang someone: The player with the most votes by all the players (alive or dead) is hanged.</li>
+                    <li>The villagers can also vote to hang someone: The player with the most votes is hanged and becomes a spirit.
+                      Spirits have one last vote to hang someone, and can still participate in discussions in the day phase.
+                    </li>
                     <li>In the case of ties, nothing happens.  Players can abstain from voting.</li>
                   </ul>
 
                   <div className="mt-4">
-                    7. <strong>Night Phase:</strong> During the night phase, if the corresponding building is built,
-                    <br />Villagers can activate their powers once that night.
-                    <br /><br />Demons can choose their actions based on their levels,
-                    without a need for corresponding buildings to be built.
-                    <br /><br />Note: a player can not be attacked by more than one demon per night.  But a player
-                    can be attacked twice by the same demon (if it is a level 3 demon).
+                    7. <strong>Night Phase:</strong> During the night phase, players that are still alive are waken up
+                      in this order to execute their actions: 
+                      <div className="ml-4">
+                        Mayor, <br/>
+                        Constables, <br/>
+                        Doctors, <br/>
+                        Priests, <br/>
+                        Guards, <br/>
+                        Demons. 
+                      </div>
                   </div>
                 </span>
-
 
                 <div className="md:col-span-2">
                   <Image src="/img/vigil/village-square-hangman.png"
@@ -116,39 +137,50 @@ export default function Page() {
               </div>
             </li>
 
-            <li className="mt-10">8. Or a player can choose to grow their powers instead. They level up to the next level right away.  But they cannot do anything else during the night.</li>
+            <li className="mt-10">8. A player can not be attacked by more than one demon per night.  A player will
+            first become injured if successfully attacked, and will be killed if they are already injured.</li>
 
-            <li className="mt-3">9. Demons know each other, but villagers do not.</li>
+            <li className="mt-3">9. Demons know each other, but villagers do not (except for the Mayor, which is a public role).</li>
 
-            <li className="mt-3">10. When a player is killed, their role is not revealed.</li>
+            <li className="mt-3">10. When a player is killed, their role is revealed. 
+              There could be multiple players with the same roles (Except for the mayor, there will always only be one mayor).</li>
 
-            <li className="mt-3">11. Anyone can chat with each other privately at any time demons can consult with each other at night before deciding on their actions.</li>
+            <li className="mt-3">11. No one can talk at night, except for demons.  Demons can consult with each other at night before deciding on their actions.</li>
 
-            <li className="mt-3">12. If you are attacked when injured, you are killed.  If you are hanged, you are killed.  Killed players become ghosts of the town and can still vote and talk during the day phase.  Ghosts do not execute their actions at night.</li>
+            <li className="mt-3">12. If you are attacked when injured, you are killed.  If you are hanged, you are killed instantly, injured or not.
+               Killed players become spirits of the town and can still vote one time,
+               and can talk during the day phase.  Spirits do not execute their actions at night.</li>
 
-            <li className="mt-3">13. Order of powers executed at night: protection, heal, investigate, guard, attack, sabotage.</li>
+            <li className="mt-3">13. The order of powers executed at night:
+              <div className="ml-4">
+                Mayor builds a building <br/>
+                Constables investigate or imprison<br/>
+                Doctors heal<br/>
+                Priests protect people<br/>
+                Guards protect buildings<br/> 
+                Demons attack
+              </div>
+            </li>
 
-            <li className="mt-3">14. Sabotage action occurs last in the night (this means villagers with the corresponding building can use their powers that night before the building is sabotaged)</li>
+            <li className="mt-3">14. When telling the moderator who to attack, heal, guard, protect, or hang, 
+              use the player&apos; name (not their roles).</li>
 
-            <li className="mt-3">15. When telling the moderator who to attack, heal, guard, protect, or hang, use the player&aposs name (not their roles).</li>
+            <li className="mt-3">15. The moderator can tell the doctors and priests which players are injured 
+              when asking for a decision on who to heal or protect.
+              e.g., Player X and Player Y are injured, would you like to heal them?</li>
 
-            <li className="mt-3">16. The moderator can tell the doctor, priest, or guard which players are injured when asking for a decision on who to heal, protect, or guard.
-              e.g. Player X is injured, would you like to heal them?  Or, Player X and Player Y are injured, would you like to heal them?</li>
+            <li>16. On each new day, the Moderator should announce which buildings are built, 
+              and which players were injured or killed in the night (don&apos;t say their roles).</li>
 
-            <li>18. On each new day, the Moderator should announce which buildings are built and still intact. And which players were injured or killed in the night (don&apost say their roles).</li>
-
-            <li className="mt-3">17. The game starts during the day phase.</li>
+            <li className="mt-3">17. The game starts during the night phase.  
+              A random building will already be built, the mayor does not build the first night.</li>
           </ol>
         </div>
 
         {/* Roles */}
         <div className="mt-8 leading-2 p-2 sm:p-4 mx-1 md:mx-4">
           <div className="mt-4">
-            <div className="font-bold">Roles - Villagers:</div>
-            Villagers can only use night power if the corresponding building is built and not
-            sabotaged, and the player is alive.
-            <br />
-            All players start with the Level 1 power.
+            <div className="font-bold">Roles:</div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mt-8">
@@ -168,11 +200,17 @@ export default function Page() {
             </div>
             <div className="grid-col col-span-1 md:col-span-4">
               <label className="font-bold">Constable (Constable Station)</label>
-              <ol className="mt-4 list-disc list-inside">
-                <li>Level 1: Investigate a person.  The answer will be three roles, the real role, and 2 random roles.</li>
-                <li>Level 2: Investigate a person.  The answer will be 2 roles: the real role and a random role.</li>
-                <li>Level 3: Investigate a person.  The answer will be the real role of that person.</li>
-              </ol>
+              <div className="mt-4">
+                Constables investigate one person at night.   The moderator will let them know
+                if the player is a demon or a villager.
+                <br/><br/>
+                If the <span className="font-bold">Constable Station</span> is built, they can
+                arrest a person and imprison them.  Imprisoned players can not vote or do their actions at night,
+                but they are not dead.
+                <br/><br/>
+                If the Constable Station is successfully attacked, imprisoned players are free again.  Freed demons
+                can still execute their actions in the same night.
+              </div>
             </div>
           </div>
 
@@ -193,11 +231,12 @@ export default function Page() {
             </div>
             <div className="grid-col col-span-1 md:col-span-4">
               <label className="font-bold">Doctor (Hospital)</label>
-              <ol className="mt-4 list-disc list-inside">
-                <li>Level 1: choose one player to heal if that person is injured</li>
-                <li>Level 2: heal themselves and another person</li>
-                <li>Level 3: heal any two people</li>
-              </ol>
+              <div className="mt-4">
+                Doctors can heal an injured player at night, including themselves.
+                <br/><br/>
+                If the <span className="font-bold">Hospital</span> is built, they can
+                heal 2 players, including themselves.
+              </div>
             </div>
           </div>
 
@@ -218,38 +257,12 @@ export default function Page() {
             </div>
             <div className="grid-col col-span-1 md:col-span-4">
               <label className="font-bold">Guard (Watch Tower)</label>
-              <ol className="mt-4 list-disc list-inside">
-                <li>Level 1: Guard a person or a building.  If the target is attacked, they get hurt instead.</li>
-                <li>Level 2: Guard themselves and another person or building.  If the guard gets attacked, they don&apost get hurt.
-                  If a different guarded person or the building is attacked, the guard gets hurt instead.</li>
-                <li>Level 3: Guard any 2 people or buildings, including themselves.  If a different guarded person or the
-                  building is attacked, the guard gets hurt instead.  The guard can not guard the same target twice.</li>
-              </ol>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-6 mt-8">
-            <div className="relative">
-              <Image src="/img/vigil/mayor-male.png"
-                width={256}
-                height={384}
-                className="rounded-xl border-[3px]"
-                alt="Mayor Male" />
-            </div>
-            <div className="relative">
-              <Image src="/img/vigil/mayor-female.png"
-                width={256}
-                height={384}
-                className="rounded-xl border-[3px]"
-                alt="Mayor Female" />
-            </div>
-            <div className="grid-col col-span-1 md:col-span-4">
-              <label className="font-bold">Mayor (Town Hall)</label>
-              <ol className="mt-4 list-disc list-inside">
-                <li>Level 1: Use a level one power of another villager (the corresponding building has to be intact).</li>
-                <li>Level 2: Use a level one or level two power of another villager (the corresponding building has to be in intact).</li>
-                <li>Level 3: Use level 1-3 powers of any villagers (the corresponding building has to be in intact).</li>
-              </ol>
+              <div className="mt-4">
+                The guard selects a building to guard.  If the target building is attacked, they get hurt instead.
+                <br/><br/>
+                If the <span className="font-bold">Watch Tower</span> is built, the 
+                attacking demon is injured (and can be killed if they get injured again).
+              </div>
             </div>
           </div>
 
@@ -270,44 +283,61 @@ export default function Page() {
             </div>
             <div className="grid-col col-span-1 md:col-span-4">
               <label className="font-bold">Priest (Church)</label>
-              <ol className="mt-4 list-disc list-inside">
-                <li>Level 1: cast one protection spell to protect against one attack.
-                  Note: If a demon at level 3 attacks the same person twice, the first attack destroys
-                  the protection. The second attack will injure the person or kill them if they are
+              <div className="mt-4">
+                <li>Priests can cast protection spells to protect another player against one attack.
+                  Protection spells do not stack (there can only be one protection spell on a person at any time).
+                  <br/><br/>
+                  Priests can not cast the protection spell on themselves.
+                  <br/><br/>
+                  If the master demon attacks the same person twice, the first attack destroys
+                  any protection they have. The second attack will injure the person or kill them if they are
                   already injured.</li>
-                <li>Level 2: can cast one protection spell on themselves and one protection spell on another player.</li>
-                <li>Level 3: cast two protection spells on the same person or two different people.  A person with 2 protection
-                  spells on them can not be injured or killed.</li>
-              </ol>
+                  <br/><br/>
+                  If the <span className="font-bold">Church</span> is built, 
+                  priests can cast 2 protection spells on 2 different people.
+              </div>
             </div>
-          </div>
-
-          <div className="mt-12">
-            <div><div className="font-bold">Roles - Demons:</div>
-              <div>
-                Demons act like villagers during the day phase.
-                During the night phase, each demon can choose one of the following actions:</div>
-            </div>
-
-            <ol className="mt-4 list-decimal ml-4 leading-8 ml-4">
-              <li>Attack someone.  If that person is not injured, they become injured.  If that person
-                is already injured, they are killed.  A villager can not be attacked by more than one demon
-                in the same night.</li>
-              <li>Sabotage: Level 2+ Demons can choose a building that is already built and sabotage it.  A sabotaged building makes
-                the power of its corresponding villager&aposs power inactive.  It also works against the village&aposs Objectives.</li>
-              <li>Grow their power: Demons start at Power Level 1.  They gain power at each higher level.</li>
-              <li>A Level 3 demon can attack twice during the night, two different player targets once, or the same player target once.
-                They can still only sabotage once, a building can not be sabotaged twice.
-              </li>
-            </ol>
-
-            <div className="mt-4">Note: Sabotages happen last during the night.
-              (e.g. a Priest can still use their power once if the church is built during the day and is sabotaged
-              during the same night).</div>
           </div>
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-6 mt-8">
             <div className="relative">
+              <Image src="/img/vigil/mayor-male.png"
+                width={256}
+                height={384}
+                className="rounded-xl border-[3px]"
+                alt="Mayor Male" />
+            </div>
+            <div className="relative">
+              <Image src="/img/vigil/mayor-female.png"
+                width={256}
+                height={384}
+                className="rounded-xl border-[3px]"
+                alt="Mayor Female" />
+            </div>
+            <div className="grid-col col-span-1 md:col-span-4">
+              <label className="font-bold">Mayor (Town Hall)</label>
+              <div className="mt-4">
+                This is a public role, known to all players at the beginning of the game.  
+                The mayor ultimately decides which building to build at night, he or she can decide 
+                to follow the villagers' discussion during the day or choose a different building altogether.
+                <br/><br/>
+                Since the mayor goes before the demons at night, the building is built even if they are killed
+                later in the night.
+                <br/><br/>
+                If the <span className="font-bold">Town Hall</span> is built, 
+                they can do another base action belonging to another role.
+                i.e. Investigate a person, heal a person, protect a person or guard a building.  
+                <br/><br/>
+                If the mayor dies, the village can elect a new mayor.  (And yes, they can unknowingly elect a demon as a mayor).
+                No buildings can be built if there isn't an active mayor in the village.
+                This means the villagers can only win by eliminating the demons before they destroy all the buildings or kill everyone.
+              </div>
+            </div>
+          </div>
+
+          {/* <!-- Demons --> */}
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-6 mt-8">
+          <div className="relative">
               <Image src="/img/vigil/demon-male.png"
                 width={256}
                 height={384}
@@ -322,19 +352,37 @@ export default function Page() {
                 alt="Demon Female" />
             </div>
             <div className="grid-col col-span-1 md:col-span-4">
-              <label className="font-bold">Demon</label>
-              <ol className="mt-4 list-disc list-inside leading-12">
-                <li>Level 1: Attack 1 person.  If the target is not injured, they become injured.
-                  If the target is already injured, they are killed. Can not attack a target that
-                  has been attacked by another demon on the same night.</li>
-                <li className="mt-3">Level 2: Can attack a person or sabotage a building.</li>
-                <li className="mt-3">Level 3: Can attack twice, either the same person or two different people.</li>
-                <li className="mt-3"><span>If attacking the same target twice and that person has no protection spell, that person dies.</span>
-                  <p>If the person has a protection spell, they are injured.</p>
-                  <p>If the person has 2 protection spells, they are unharmed.</p>
-                  <p>The rule that different demons can&apost target the same person still apply.</p>
-                </li>
-              </ol>
+              <label className="font-bold">Demons</label>
+              <div className="mt-4">
+                Demons act like villagers during the day phase.  Since there can be multiple players with the same role,
+                they can claim to be a villager's role.
+                <br/><br/>
+                During the night phase, each demon can attack 2 different players or one building.  But they can not
+                attack the same player twice in a night.
+                <br/><br/>
+                Healing themselves: Instead of attacking, the demon can decide to heal themselves instead (if they get injured by a guard).
+                <br/><br/>
+                Become Master Demon: Instead of attacking, a demon can decide to grow their power and become a Master Demon in one night.  
+                There can only be one master demon at any time.
+                <br/><br/>
+
+                A Master Demon has these extra powers:<br/>
+                <ol className="mt-4 list-decimal ml-4 leading-8 ml-4">
+                  <li>Attack the same player twice in one night.  This means if a player isn't injured and there are no protection
+                    spells on them, they will die instantly.  But if the player is protected by a priest, then they will only get injured.
+                  </li>
+                  <li>If investigaged, they are revealed as a random villager's role.  The false role is random everytime, so the investigator might 
+                    be able to deduce if a player is a Master Demon if subsequent investigations resulted in different roles for the same player.
+                  </li>
+                  <li>Hanging a Master Demon only injure them.  i.e. they can only be killed by hanging them when they are already injured.
+                    This means they have to be hanged twice, or hanged when they are already injured from attacking a building with a guard 
+                    and the Watch Tower in play.
+                    <br/><br/>
+                    Note: The Master Demon can still be imprisoned by the constable to keep them from wreaking havoc, to be hanged
+                    again at the villagers' leisure.
+                  </li>
+                </ol>
+              </div>
             </div>
           </div>
         </div>
@@ -343,27 +391,32 @@ export default function Page() {
           <h3 className="font-bold">Moderator Notes:</h3>
 
           <ol className="mt-4 leading-8 list-inside list-none">
-            <li>1. Always ask player&aposs name when voting or completing actions (not their roles)</li>
+            <li>1. Always ask for and say the player&apos;s name when voting or completing actions (not their roles)</li>
             <li className="mt-4">2. At the start of each day, announce:</li>
-            <li className="ml-4">Which buildings are built or intact, which are sabotaged</li>
+            <li className="ml-4">Which buildings are built</li>
             <li className="ml-4">Which players are injured or dead</li>
-            <li className="ml-4">Vague actions during the night: e.g. The Priest protected, the guard guarded, the doctor healed,
-              but player [name] was injured and player [name] was killed.  Building [name] was sabotaged.</li>
 
-            <li className="mt-4">3. Suggested player count:</li>
+            <li className="mt-4">3. When dealing out roles, always include 1 mayor, specified number of demons, and all villager roles randomized.  
+              There are 3 of each roles in the deck, ensuring there could be multiple players of the same role in the game.
+              This is an advantage to the demons, who can claim to be a role without drawing too much suspicion.
+            </li>
+
+            <li className="mt-4">4. Suggested player count:</li>
             <li className="ml-4">
               2 players.  One play 2 demons, the other play 5 villagers.
-              Omit the constable and randomly picked the other roles.
+              Omit the constable, include 1 mayor, and randomly pick the other roles.
             </li>
             <li className="ml-4">
-              3 players.  One play 2 demons, the other play 2 villagers each.
-              Omit the constable and randomly picked the other roles.
+              3 players.  One play 2 demons, the other players play 3 villagers each.
+              Omit the constable, include 1 mayor, and randomly pick the other roles.
             </li>
             <li className="ml-4">
-              4 players.  One play 2 demons, the others play 1 villagers each.
+              4 players.  One play 2 demons, the others play 2 villagers each.
+              Include 1 mayor, and randomly pick the other roles.
             </li>
             <li className="ml-4">
               5 players.  One play 2 demons, the others play 1 villagers each.
+              Include 1 mayor, and randomly pick the other roles.
             </li>
             <li className="ml-4">
               6 players.  2 demons.  5 villagers, one player controls 2 villagers.
@@ -372,7 +425,7 @@ export default function Page() {
               7 players.  2 demons.  5 villagers.
             </li>
             <li className="ml-4">
-              8 players.  2 demons.  6 villagers.  One demon start at level 2.
+              8 players.  2 demons.  6 villagers.
             </li>
             <li className="ml-4">
               9 players.  3 demons.  6 villagers.
@@ -381,7 +434,7 @@ export default function Page() {
               10 players.  3 demons.  7 villagers.
             </li>
             <li className="ml-4">
-              11 players.  3 demons.  8 villagers.  One demon start at level 2.
+              11 players.  3 demons.  8 villagers.
             </li>
             <li className="ml-4">
               12 players.  4 demons.  8 villagers.
@@ -391,6 +444,9 @@ export default function Page() {
             </li>
             <li className="ml-4">
               14 players.  5 demons.  10 villagers.
+            </li>
+            <li className="ml-4">
+              15 players.  5 demons.  11 villagers.
             </li>
           </ol>
         </div>
