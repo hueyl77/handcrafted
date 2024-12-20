@@ -79,11 +79,11 @@ export default function Page() {
                     The completed buildings grant extra power to the role they are associated with.
                   </div>
                   <ol className="list-disc ml-8">
-                    <li>Finish building the Church (enhances the Priests' Power)</li>
-                    <li>Finish building the Hospital (enhances the Doctors' Power)</li>
-                    <li>Finish building the Watch Tower ((enhances the Guards' Power)</li>
-                    <li>Finish building the Constable&apos; Station (enhances the Constables' Power)</li>
-                    <li>Finish building the Town Hall (enhances the Mayor's Power)</li>
+                    <li>Finish building the Church (enhances the Priests&apos; Power)</li>
+                    <li>Finish building the Hospital (enhances the Doctors&apos; Power)</li>
+                    <li>Finish building the Watch Tower ((enhances the Guards&apos; Power)</li>
+                    <li>Finish building the Constable&apos; Station (enhances the Constables&apos; Power)</li>
+                    <li>Finish building the Town Hall (enhances the Mayor&apos;s Power)</li>
                   </ol>
                 </span>
 
@@ -103,7 +103,7 @@ export default function Page() {
               <div className="grid grid-cols-1 md:grid-cols-6 gap-2">
                 <span className="md:col-span-4 md:pr-[100px]">
                   <p>6. <strong>Day phase:</strong> The village (including hidden demons disguised as a villager), 
-                    discuss which building to build, this will affect the Mayor's decision at night.  
+                    discuss which building to build, this will affect the Mayor&apos;s decision at night.  
                     Only the mayor can order a building to be built at night.</p>
 
                   <ul className="list-inside list-disc ml-4 md:pr-[100px]">
@@ -319,7 +319,7 @@ export default function Page() {
               <div className="mt-4">
                 This is a public role, known to all players at the beginning of the game.  
                 The mayor ultimately decides which building to build at night, he or she can decide 
-                to follow the villagers' discussion during the day or choose a different building altogether.
+                to follow the villagers&apos; discussion during the day or choose a different building altogether.
                 <br/><br/>
                 Since the mayor goes before the demons at night, the building is built even if they are killed
                 later in the night.
@@ -329,7 +329,7 @@ export default function Page() {
                 i.e. Investigate a person, heal a person, protect a person or guard a building.  
                 <br/><br/>
                 If the mayor dies, the village can elect a new mayor.  (And yes, they can unknowingly elect a demon as a mayor).
-                No buildings can be built if there isn't an active mayor in the village.
+                No buildings can be built if there isn&apos;t an active mayor in the village.
                 This means the villagers can only win by eliminating the demons before they destroy all the buildings or kill everyone.
               </div>
             </div>
@@ -355,7 +355,7 @@ export default function Page() {
               <label className="font-bold">Demons</label>
               <div className="mt-4">
                 Demons act like villagers during the day phase.  Since there can be multiple players with the same role,
-                they can claim to be a villager's role.
+                they can claim to be a villager&apos;s role.
                 <br/><br/>
                 During the night phase, each demon can attack 2 different players or one building.  But they can not
                 attack the same player twice in a night.
@@ -368,10 +368,10 @@ export default function Page() {
 
                 A Master Demon has these extra powers:<br/>
                 <ol className="mt-4 list-decimal ml-4 leading-8 ml-4">
-                  <li>Attack the same player twice in one night.  This means if a player isn't injured and there are no protection
+                  <li>Attack the same player twice in one night.  This means if a player isn&apos;t injured and there are no protection
                     spells on them, they will die instantly.  But if the player is protected by a priest, then they will only get injured.
                   </li>
-                  <li>If investigaged, they are revealed as a random villager's role.  The false role is random everytime, so the investigator might 
+                  <li>If investigaged, they are revealed as a random villager&apos;s role.  The false role is random everytime, so the investigator might 
                     be able to deduce if a player is a Master Demon if subsequent investigations resulted in different roles for the same player.
                   </li>
                   <li>Hanging a Master Demon only injure them.  i.e. they can only be killed by hanging them when they are already injured.
@@ -379,7 +379,7 @@ export default function Page() {
                     and the Watch Tower in play.
                     <br/><br/>
                     Note: The Master Demon can still be imprisoned by the constable to keep them from wreaking havoc, to be hanged
-                    again at the villagers' leisure.
+                    again at the villagers&apos; leisure.
                   </li>
                 </ol>
               </div>

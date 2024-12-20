@@ -44,11 +44,11 @@ export default function Page() {
                       </p>
                   </div>
                   <ol className="list-disc ml-8">
-                    <li>Finish building the Church (enhances the Priests' Power)</li>
-                    <li>Finish building the Hospital (enhances the Doctors' Power)</li>
-                    <li>Finish building the Watch Tower ((enhances the Guards' Power)</li>
-                    <li>Finish building the Constable&apos; Station (enhances the Constables' Power)</li>
-                    <li>Finish building the Town Hall (enhances the Mayor's Power)</li>
+                    <li>Finish building the Church (enhances the Priests&apos; Power)</li>
+                    <li>Finish building the Hospital (enhances the Doctors&apos; Power)</li>
+                    <li>Finish building the Watch Tower ((enhances the Guards&apos; Power)</li>
+                    <li>Finish building the Constable&apos; Station (enhances the Constables&apos; Power)</li>
+                    <li>Finish building the Town Hall (enhances the Mayor&apos;s Power)</li>
                   </ol>
                 </span>
               </div>
@@ -60,7 +60,7 @@ export default function Page() {
               <div className="grid grid-cols-1 md:grid-cols-6 gap-2">
                 <span className="md:col-span-4 md:pr-[100px]">
                   <p>6. <strong>Day phase:</strong> The village (including hidden demons disguised as a villager), 
-                    discuss which building to build, this will affect the Mayor's decision at night.  
+                    discuss which building to build, this will affect the Mayor&apos;s decision at night.  
                     Only the mayor can order a building to be built at night.</p>
 
                   <ul className="list-inside list-disc ml-4 md:pr-[100px]">
