@@ -26,7 +26,8 @@ export default function Page() {
             But not all is as it seems. A murder in the night, the spirits of the land have infiltrated the village, trying to protect their home from the invading humans. The demons kill at night and walk among the villagers during the day.
             </p>
             <p className="mt-4">
-            In order for Vigilstone to prosper, the villagers must weed out the demons among them. They must dispatch the monsters until the land is safe to thrive again.
+            In order for Vigilstone to prosper, the villagers must weed out the demons among them. 
+            They must dispatch the monsters until the land is safe to thrive again.
             </p>
 
             <p className="mt-12 text-left">
@@ -45,9 +46,9 @@ export default function Page() {
             <li>1. The players are split into two teams, villagers and demons.
               Team villagers win by eliminating all the demons or
               successfully <span className="font-bold">building all five buildings, </span>.</li>
-            <li className="mt-3">2. The demon Team wins when <span className="font-bold">the number of demons alive
-              surpasses the number of villagers alive</span>, 
-              or if the day starts with 0 buildings standng.  The game starts with one random building already built.</li>
+            <li className="mt-3">2. The demon Team wins when they can kill all the villagers, 
+              or if the day starts with 0 buildings standing.  The game starts with one random building already built.</li>
+              
             <li className="mt-3">3. A moderator runs the game.  They will assign random roles to the players, instruct the players
               to wake up at night to execute their powers, moderate votings during the day, and keep track of the state of the game.
             </li>
@@ -201,6 +202,16 @@ export default function Page() {
               The votes must be equal to or higher than the number of players alive to succeed.
               Ties result in nothing happening (no one is hanged or a new mayor isn&apos;t elected).
             </li>
+
+            <li className="mt-3">
+              21. Villagers can unknowling select the same target to investigate, imprison, protect, heal,
+              or guard.  In those cases, the moderator do not tell them someone else has already 
+              investigated/healed/protected/guarded that target.  It is a wasted action (protection spells
+              do not stack and buildings do not get double guarded.)
+              <br/><br/>
+              In the case of multiple guards guarding the same building that were attacked, 
+              a random guard is selected to resolve the attack.
+            </li>
           </ol>
         </div>
 
@@ -237,6 +248,9 @@ export default function Page() {
                 <br/><br/>
                 If the Constable Station is successfully attacked, imprisoned players are free again.  Freed demons
                 can still execute their actions in the same night.
+                <br/><br/>
+                In the unlikely case where 2 Constables unknowingly try to imprison each other, nothing happens.
+                Neither one is imprisoned.
               </div>
             </div>
           </div>
