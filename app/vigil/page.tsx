@@ -8,13 +8,9 @@ export default function Page() {
       <Title>Vigilstone Chronicles</Title>
       <Text>Online Social Deduction Game (Played through WeChat, Whatsapp, Discord, Forums)</Text>
 
-      <Card className="mt-8">
-        <h3 className="font-bold">Chapter 1</h3>
-
-        <h4 className="font-bold">The Founding</h4>
 
         {/* Intro */}
-        <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
           <div className="relative">
             <Image src="/img/vigil/vigilstone-village.jpg"
               width={512}
@@ -24,15 +20,13 @@ export default function Page() {
           </div>
           <div className="relative text-justify pr-8">
             <p>
-              Nestled between the gentle slopes of two mountains, the village of Vigilstone is barely visible from the main road.
-              A scattering of thatched rooftops mingled with clusters of old oaks and ash trees, seemingly idyllic next to the
-              glimmering river.  New, unfinished buildings tell a story of beginnings, and of hope.
+            Nestled between the gentle slopes of two mountains, the village of Vigilstone is barely visible from the main road. A scattering of thatched rooftops mingled with clusters of old oaks and ash trees, seemingly idyllic, next to the glimmering river. New, unfinished buildings tell a story of beginnings and of hope.
             </p>
             <p className="mt-4">
-              But not all is as it seems.  A murder in the night.  Surely the spirits of this old new land has infiltrated the village.  The demons kill at night, and walk among the villagers at sunrise.
+            But not all is as it seems. A murder in the night, the spirits of the land have infiltrated the village, trying to protect their home from the invading humans. The demons kill at night and walk among the villagers during the day.
             </p>
             <p className="mt-4">
-              In order for Vigilstone to prosper, the villagers must weed out the demons among them.  They must dispatch the monsters one by one, until the land is safe to thrive once more.
+            In order for Vigilstone to prosper, the villagers must weed out the demons among them. They must dispatch the monsters until the land is safe to thrive again.
             </p>
 
             <p className="mt-12 text-left">
@@ -48,9 +42,10 @@ export default function Page() {
           <h3 className="font-bold">Rules</h3>
 
           <ol className="mt-4 leading-8 list-inside list-none">
-            <li>1. Team villagers can claim victory by eliminating all the demons or
-              successfully <span className="font-bold">build all five buildings, </span>.</li>
-            <li className="mt-3">2. The demon Team can seize victory when <span className="font-bold">the number of demons alive
+            <li>1. The players are split into two teams, villagers and demons.
+              Team villagers win by eliminating all the demons or
+              successfully <span className="font-bold">building all five buildings, </span>.</li>
+            <li className="mt-3">2. The demon Team wins when <span className="font-bold">the number of demons alive
               surpasses the number of villagers alive</span>, 
               or if the day starts with 0 buildings standng.  The game starts with one random building already built.</li>
             <li className="mt-3">3. A moderator runs the game.  They will assign random roles to the players, instruct the players
@@ -64,19 +59,15 @@ export default function Page() {
                     4. The five buildings are:
                     <br/>
                     <div className="ml-4">
-                      the Town Hall, <br/>
-                      the Hospital, <br/>
-                      the Church, <br/>
-                      the Contable Station, <br/>
-                      the Watch Tower.
+                      the Town Hall <br/>
+                      the Hospital <br/>
+                      the Church <br/>
+                      the Constable Station <br/>
+                      the Watch Tower
                     </div>
-                    <br/>
-                    If all five buildings are built, and the demons fail to kill enough villagers 
-                    that night, the villagers win.
-                    <br/><br/>
-                    If all five buildings are destroyed, the demons win the following morning.
-                    <br/><br/>
-                    The completed buildings grant extra power to the role they are associated with.
+                    <div className="mt-4">
+                      Completed buildings grant extra power to the roles they are associated with.
+                    </div>
                   </div>
                   <ol className="list-disc ml-8">
                     <li>Finish building the Church (enhances the Priests&apos; Power)</li>
@@ -85,6 +76,26 @@ export default function Page() {
                     <li>Finish building the Constable&apos; Station (enhances the Constables&apos; Power)</li>
                     <li>Finish building the Town Hall (enhances the Mayor&apos;s Power)</li>
                   </ol>
+
+                  <div className="mt-6">
+                    If all five buildings are built,  villagers win the following day.                    
+                    <br/>
+                    If all five buildings are destroyed, the demons win the following morning.
+                    <br/>
+                    <ol className="list-disc ml-8 mt-4">
+                      <li>Building victories will always come first. </li>
+                      <li>
+                         If the villagers completed all 5 buildings in one night, 
+                        without any of them successfully sabotaged, and the Demons kill off all the villagers, 
+                        the Village still win.
+                      </li>
+                      <li>
+                        Likewise, if the demons destroyed all buildings, 
+                        but they all died in the process, the demons still win.
+                      </li>
+                    </ol>
+                    
+                  </div>
                 </span>
 
                 <div className="md:col-span-2">
@@ -97,7 +108,7 @@ export default function Page() {
               </div>
             </li>
 
-            <li className="mt-3">5. The game cycles between Day and Night phases</li>
+            <li className="mt-4">5. The game cycles between Day and Night phases</li>
 
             <li className="my-4">
               <div className="grid grid-cols-1 md:grid-cols-6 gap-2">
@@ -106,22 +117,23 @@ export default function Page() {
                     discuss which building to build, this will affect the Mayor&apos;s decision at night.  
                     Only the mayor can order a building to be built at night.</p>
 
-                  <ul className="list-inside list-disc ml-4 md:pr-[100px]">
-                    <li>The villagers can also vote to hang someone: The player with the most votes is hanged and becomes a spirit.
+                  <ul className="list-inside list-disc ml-4 mt-4 md:pr-[100px]">
+                    <li>The villagers can also vote to hang someone: The player with the most votes, and has
+                      the minimum number of votes, is hanged and become a spirit.
                       Spirits have one last vote to hang someone, and can still participate in discussions in the day phase.
                     </li>
                     <li>In the case of ties, nothing happens.  Players can abstain from voting.</li>
                   </ul>
 
                   <div className="mt-4">
-                    7. <strong>Night Phase:</strong> During the night phase, players that are still alive are waken up
+                    7. <strong>Night Phase:</strong> During the night phase, players that are still alive are woken up
                       in this order to execute their actions: 
                       <div className="ml-4">
-                        Mayor, <br/>
-                        Constables, <br/>
-                        Doctors, <br/>
-                        Priests, <br/>
-                        Guards, <br/>
+                        Mayor <br/>
+                        Constables <br/>
+                        Doctors <br/>
+                        Priests <br/>
+                        Guards <br/>
                         Demons. 
                       </div>
                   </div>
@@ -165,15 +177,30 @@ export default function Page() {
             <li className="mt-3">14. When telling the moderator who to attack, heal, guard, protect, or hang, 
               use the player&apos; name (not their roles).</li>
 
-            <li className="mt-3">15. The moderator can tell the doctors and priests which players are injured 
-              when asking for a decision on who to heal or protect.
-              e.g., Player X and Player Y are injured, would you like to heal them?</li>
-
-            <li>16. On each new day, the Moderator should announce which buildings are built, 
+            <li>15. On each new day, the Moderator should announce which buildings are built, 
               and which players were injured or killed in the night (don&apos;t say their roles).</li>
 
-            <li className="mt-3">17. The game starts during the night phase.  
-              A random building will already be built, the mayor does not build the first night.</li>
+            <li>16. Except for the Town Hall, the effects that grant their respective roles extra power are activated
+              on the same night they are built.  The Town Hall, however, only allows the Mayor an extra action on subsquent nights
+              if it is still standing.</li>
+
+            <li className="mt-3">17. The game starts during the day phase.  
+              A random building will already be built.  A random player that&apos;s not a demon is selected as the Mayor.</li>
+
+            <li className="mt-3">18. The moderator can randomly assign roles (repeated roles are allowed), 
+                or they can customize the roles as they see fit.  The can choose which roles are present and how many of 
+                them there are to the players, or not, it&apos;s up to the moderator to decide.</li>
+            
+            <li className="mt-3">19. Building victories will always come first.  If the villagers
+              build all 5 buildings in one night, and the Demons kill off all the villagers, the Village still win.
+              Likewise, if the demons destroyed all buildings, but they all died in the process, the demons still win.
+            </li>
+
+            <li className="mt-3">
+              20. Voting for Hangings or for a new Mayor:<br />
+              The votes must be equal to or higher than the number of players alive to succeed.
+              Ties result in nothing happening (no one is hanged or a new mayor isn&apos;t elected).
+            </li>
           </ol>
         </div>
 
@@ -183,7 +210,7 @@ export default function Page() {
             <div className="font-bold">Roles:</div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mt-8">
+          <div className="grid md:grid-cols-6 gap-2">
             <div className="relative">
               <Image src="/img/vigil/constable-male.png"
                 width={256}
@@ -258,10 +285,14 @@ export default function Page() {
             <div className="grid-col col-span-1 md:col-span-4">
               <label className="font-bold">Guard (Watch Tower)</label>
               <div className="mt-4">
-                The guard selects a building to guard.  If the target building is attacked, they get hurt instead.
+                The guard selects a building to guard.  
+                If the target building is attacked, they get hurt instead.
                 <br/><br/>
                 If the <span className="font-bold">Watch Tower</span> is built, the 
-                attacking demon is injured (and can be killed if they get injured again).
+                attacking demon is ALSO injured (and can be killed if they get injured again).
+                <br/><br/>
+                If multiple guards are guarding the same building, 
+                a guard is randomly selected to resolve the attack.
               </div>
             </div>
           </div>
@@ -326,7 +357,8 @@ export default function Page() {
                 <br/><br/>
                 If the <span className="font-bold">Town Hall</span> is built, 
                 they can do another base action belonging to another role.
-                i.e. Investigate a person, heal a person, protect a person or guard a building.  
+                i.e. Investigate a person, heal a person, protect a person or guard a building.  <br/>
+                But unlike other buildings, the Town Hall only grants the Mayor the extra action on a subsequent night.
                 <br/><br/>
                 If the mayor dies, the village can elect a new mayor.  (And yes, they can unknowingly elect a demon as a mayor).
                 No buildings can be built if there isn&apos;t an active mayor in the village.
@@ -368,7 +400,7 @@ export default function Page() {
 
                 A Master Demon has these extra powers:<br/>
                 <ol className="mt-4 list-decimal ml-4 leading-8 ml-4">
-                  <li>Attack the same player twice in one night.  This means if a player isn&apos;t injured and there are no protection
+                  <li>Attack the same player or building twice in one night.  This means if a player isn&apos;t injured and there are no protection
                     spells on them, they will die instantly.  But if the player is protected by a priest, then they will only get injured.
                   </li>
                   <li>If investigaged, they are revealed as a villager.
@@ -386,7 +418,9 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="mt-12">
+        <hr className="mt-8 mb-8"/>
+
+        <div className="mt-4">
           <h3 className="font-bold">Moderator Notes:</h3>
 
           <ol className="mt-4 leading-8 list-inside list-none">
@@ -449,7 +483,7 @@ export default function Page() {
             </li>
           </ol>
         </div>
-      </Card>
+  
     </main >
   )
 } 

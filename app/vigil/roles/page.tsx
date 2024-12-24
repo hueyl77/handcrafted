@@ -100,8 +100,7 @@ export default function Page() {
                   <li>Attack the same player twice in one night.  This means if a player isn&apos;t injured and there are no protection
                     spells on them, they will die instantly.  But if the player is protected by a priest, then they will only get injured.
                   </li>
-                  <li>If investigaged, they are revealed as a villager.  The false role is random everytime, so the investigator might 
-                    be able to deduce if a player is a Master Demon if subsequent investigations resulted in different roles for the same player.
+                  <li>If investigaged, they are revealed as a villager.
                   </li>
                   <li>Hanging a Master Demon only injure them.  i.e. they can only be killed by hanging them when they are already injured.
                     This means they have to be hanged twice, or hanged when they are already injured from attacking a building with a guard 
