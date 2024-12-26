@@ -46,8 +46,10 @@ export default function Page() {
             <li>1. The players are split into two teams, villagers and demons.
               Team villagers win by eliminating all the demons or
               successfully <span className="font-bold">building all five buildings, </span>.</li>
-            <li className="mt-3">2. The demon Team wins when the number of demons alive surpasses the number of villagers alive, 
-              or if the day starts with 0 buildings standing.  The game starts with one random building already built.</li>
+            <li className="mt-3">2. The demon Team wins if the day starts with 0 buildings standing.
+              Or if the number of demons alive surpasses the number of villagers that can vote (including spirits).
+              <br/>
+              The game starts with one random building already built.</li>
               
             <li className="mt-3">3. A moderator runs the game.  They will assign random roles to the players, instruct the players
               to wake up at night to execute their powers, moderate votings during the day, and keep track of the state of the game.
